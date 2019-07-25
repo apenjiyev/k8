@@ -1,0 +1,14 @@
+kubectl describe pod PODNAME
+1. check if it is running or not
+2. if it is pending, it might be due to 
+   a. not enough resources
+   b. you are using hostPort
+3. if it is waiting then it is scheduled to a node but can't run.
+   most common reason is the image pulling from the docker registry.
+4. if it keeps crashing then analyze the logs of the pod
+kubectl logs PODNAME CONTAINERNAME
+5. my pod is running but not doing the assigned job
+  might be because of an error in the yaml file
+6. debug RC and Services
+   make sure that number of endpoints are matching number of pods
+7. make sure that port assignment is done properly for the network to work.

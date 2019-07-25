@@ -1,0 +1,1 @@
+kubectl exec -it --namespace=default myapp -- bash -c "ps aux | top -n 5"
